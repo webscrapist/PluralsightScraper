@@ -126,8 +126,6 @@ class PluralsightScraper {
         saveTo = this.safeName(saveTo)
         if (!fs.existsSync(savePath + "/" + saveTo)) {
             fs.mkdirSync(savePath + "/" + saveTo);
-            // Save the courses.json to avoid scraping next time
-            fs.createWriteStream(savePath + "/" + saveTo + "/course.json").write(JSON.toString(courses));
         }
 
         if (currentSection != this.safeName(courses[index].section)) {
