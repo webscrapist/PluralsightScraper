@@ -73,7 +73,7 @@ class PluralsightScraper {
 
             if (fs.existsSync('jsons/' + this.safeName(saveTo) + '.json')) {
                 console.log('Videos already scraped ! Loading urls...')
-                gv_courses = JSON.parse(fs.readFileSync('jsons/The 35 Things Everyone Needs to Know About Dynamics CRM.json').toString());
+                gv_courses = JSON.parse(fs.readFileSync('jsons/' + this.safeName(saveTo) + '.json').toString());
                 this.terminate();
             } else {
                 var tasks = module.courses.map((course, index) => (
